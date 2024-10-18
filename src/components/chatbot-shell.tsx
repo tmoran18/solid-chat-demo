@@ -17,7 +17,7 @@ export const ChatbotShell = () => {
         <div class="chat-container">
           <div class="header">
             <h6 class="chat-name">Cody</h6>
-            <button class="chat-close" onClick={() => setOpen(false)}>
+            <button id="chat-close" onClick={() => setOpen(false)}>
               Close
             </button>
           </div>
@@ -25,7 +25,7 @@ export const ChatbotShell = () => {
         </div>
       </Show>
       <Show when={!open()}>
-        <button class="btn-open-chat" onClick={() => setOpen(true)}>
+        <button id="chat-open" onClick={() => setOpen(true)}>
           Open
         </button>
       </Show>
