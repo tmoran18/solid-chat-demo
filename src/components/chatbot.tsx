@@ -32,7 +32,7 @@ const Chatbot = ({
       if (conversationRef) {
         conversationRef.scrollTop = conversationRef.scrollHeight;
       }
-      // Reply with a random greeting after 2 seconds
+      // Reply with a random greeting after 0.5 seconds
       setBotIsTyping(true);
       setTimeout(() => {
         const randomGreeting =
