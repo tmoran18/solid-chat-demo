@@ -8,7 +8,7 @@ import { ChatbotShell } from "../components/chatbot-shell.tsx";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Chatbot Demo with Solid</title>
   </head>
   <body>
     <ChatbotShell client:idle />
@@ -56,27 +56,31 @@ import { ChatbotShell } from "../components/chatbot-shell.tsx";
         height: 100%;
         width: 100%;
         background-color: lightgray;
-        display: flex;
-        flex-direction: column;
-        .message-row {
+        .messages {
           display: flex;
-          padding: 1rem;
-          div {
+          flex-direction: column-reverse;
+          max-height: 100%;
+          overflow-y: auto;
+          .message-row {
+            display: flex;
             padding: 1rem;
-            border-radius: 2rem;
-            text-align: left;
-            width: fit-content;
-            max-width: 70%;
-          }
-          .bot-message {
-            background-color: gray;
-            color: black;
-            justify-self: flex-start;
-          }
-          .user-message {
-            background-color: darkblue;
-            color: #fff;
-            justify-self: flex-end;
+            div {
+              padding: 1rem;
+              border-radius: 2rem;
+              text-align: left;
+              width: fit-content;
+              max-width: 70%;
+            }
+            .bot-message {
+              background-color: gray;
+              color: black;
+              justify-self: flex-start;
+            }
+            .user-message {
+              background-color: darkblue;
+              color: #fff;
+              justify-self: flex-end;
+            }
           }
         }
       }
