@@ -26,13 +26,8 @@ const greetings = [
 
 const PendingMessage = () => {
   return (
-    <div
-      classList={{
-        ["message-row"]: true,
-        ["justify-start"]: true,
-      }}
-    >
-      <div class={"bot-message"}>...</div>
+    <div class="message-row justify-start">
+      <div class="bot-message">...</div>
     </div>
   );
 };
@@ -86,11 +81,9 @@ const Chatbot = ({
           <For each={messageList()} fallback={<PendingMessage />}>
             {(message) => (
               <div
-                classList={{
-                  ["message-row"]: true,
-                  ["justify-start"]: message.role === "bot",
-                  ["justify-end"]: message.role === "user",
-                }}
+                class={`message-row ${
+                  message.role == "user" ? "justify-end" : "justify-start"
+                }`}
               >
                 <div
                   class={
