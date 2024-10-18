@@ -1,28 +1,6 @@
 import { For, Show, createSignal, type Accessor, type Setter } from "solid-js";
 import type { Message } from "./chatbot-shell";
-
-const greetings = [
-  "Howdy from USA!",
-  "¡Hola from Spain!",
-  "Bonjour from France!",
-  "Hallo from Germany!",
-  "Ciao from Italy!",
-  "Olá from Portugal!",
-  "你好 from China!",
-  "こんにちは from Japan!",
-  "안녕하세요 from Korea!",
-  "Привет from Russia!",
-  "مرحبا from the Middle East!",
-  "नमस्ते from India!",
-  "Merhaba from Turkey!",
-  "Hallo from the Netherlands!",
-  "Γειά σου from Greece!",
-  "שלום from Israel!",
-  "Hej from Sweden!",
-  "Cześć from Poland!",
-  "Xin chào from Vietnam!",
-  "สวัสดี from Thailand!",
-];
+import { greetings } from "../utils/constants";
 
 const PendingMessage = () => {
   return (
@@ -41,9 +19,6 @@ const Chatbot = ({
 }) => {
   let conversationRef: HTMLDivElement | undefined;
   const [input, setInput] = createSignal("");
-  //   const [messages, setMessages] = createSignal<Message[]>([
-  //     { role: "bot", text: "Howdy from USA!" },
-  //   ]);
   const [botIsTyping, setBotIsTyping] = createSignal(false);
 
   const addMessage = (text: string, role: "user" | "bot") => {
