@@ -7,9 +7,7 @@ export type Message = { text: string; role: "user" | "bot" };
 export const ChatbotShell = () => {
   const [open, setOpen] = createSignal(false);
   // Store user session state here so it doesn't reset on open/close
-  const [messages, setMessages] = createSignal<Message[]>([
-    { role: "bot", text: "Howdy from USA!" },
-  ]);
+  const [messages, setMessages] = createSignal<Message[]>([{ role: "bot", text: "Howdy from USA!" }]);
 
   return (
     <div>
@@ -25,7 +23,7 @@ export const ChatbotShell = () => {
         </div>
       </Show>
       <Show when={!open()}>
-        <button id="chat-open" onClick={() => setOpen(true)}>
+        <button id="chat-open" class="bg-lime-500" onClick={() => setOpen(true)}>
           Open
         </button>
       </Show>
